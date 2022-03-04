@@ -22,10 +22,10 @@ public class Notes {
                 notas[i][j] = sc.nextDouble();
             }
         }
-        double highest = 0;
-        double lowest = 100000000;
-        int highestIndex=0;
-        int lowestIndex=0;
+        double notaAlta = 0;
+        double notaBaja = 100000000;
+        int notaAltaIndex=0;
+        int notaBajaIndex=0;
         ArrayList <String> aprobados = new ArrayList<>();
         ArrayList <String> reprobados = new ArrayList<>();
 
@@ -36,13 +36,13 @@ public class Notes {
                 sum += notas[i][j];
             }
             double promedio = sum / nExamenes;
-            if (promedio > highest) {
-                highest = promedio;
-                highestIndex=i;
+            if (promedio > notaAlta) {
+                notaAlta = promedio;
+                notaAltaIndex=i;
             }
-            if (promedio < lowest) {
-                lowest = promedio;
-                lowestIndex =i;
+            if (promedio < notaBaja) {
+                notaBaja = promedio;
+                notaBajaIndex =i;
             }
             if(promedio>=7){
                 aprobados.add(nombres[i]+" "+apellidos[i]);
@@ -50,10 +50,10 @@ public class Notes {
                 reprobados.add(nombres[i]+" "+apellidos[i]);
             }
         }
-        System.out.println("El estudiante con mayor promedio es "+nombres[highestIndex]+" "+apellidos[highestIndex]+
-                " Con un promedio de: "+highest);
-        System.out.println("El estudiante con menor promedio es "+nombres[lowestIndex]+" "+apellidos[lowestIndex]+
-                " Con un promedio de: "+lowest);
+        System.out.println("El estudiante con mayor promedio es "+nombres[notaAltaIndex]+" "+apellidos[notaAltaIndex]+
+                " Con un promedio de: "+notaAlta);
+        System.out.println("El estudiante con menor promedio es "+nombres[notaBajaIndex]+" "+apellidos[notaBajaIndex]+
+                " Con un promedio de: "+notaBaja);
         System.out.println("Los estudiantes aprobados son: ");
         for (String e:aprobados){
             System.out.println(e);
